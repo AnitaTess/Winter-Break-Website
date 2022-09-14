@@ -1,0 +1,79 @@
+@charset "utf-8";
+/* Tignes */
+* {
+	box-sizing: border-box;
+  }
+
+.navbar{
+	opacity: 0.6;
+}
+
+#displayname{
+	margin-top: 52px;
+}
+
+#title{
+	text-align: center;
+}
+
+#carousel1{
+	position: relative;
+	width: 50%;
+	height: auto;
+	margin: auto;
+
+}
+
+.img-fluid{
+width: 100%;
+height: auto;
+}
+
+#wesec{
+	margin-top: 20px;
+	font-weight: bold;
+}
+
+#section{
+	position: relative;
+	overflow: hidden;
+	width: 100%;
+	height: auto;
+}
+
+.column{
+	float: left;
+	max-width: 100%;
+	height: auto;
+	margin: auto;
+}
+
+.pageimg{
+	clip-path: ellipse(40% 35% at 50% 50%);
+	  max-width: 100%;
+	  height: auto;
+	  margin: auto;
+  }
+
+  .thick{
+	width: 5%;
+	height: auto;
+	margin-right: 10px;
+	margin-top: 5px;
+	float: left;
+}
+
+.row:after {
+	content: "";
+	display: table;
+	clear: both;}
+
+	.icon {
+		margin: 20px;
+		}
+
+	@media screen and (max-width: 600px) {
+		.column {
+		  width: 100%; padding-left: 0;}
+		.pageimg {clip-path: none; width: 80%; height: 50%; display: flex;}
+		#carousel1{width: auto; height: auto;} }

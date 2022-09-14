@@ -1,0 +1,141 @@
+* {
+	box-sizing: border-box;
+  }
+
+  body {
+	font-family: Arial, Helvetica, sans-serif;
+	font-style: normal;
+}
+
+.navbar{
+	opacity: 0.6;
+}
+
+header {
+	position: relative;
+	background-color: black;
+	height: 100vh;
+	min-height: 25rem;
+	width: 100%;
+	overflow: hidden;
+}
+header video {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	min-width: 100%;
+	min-height: 100%;
+	width: auto;
+	height: auto;
+	z-index: 0;
+	transform: translateX(-50%) translateY(-50%);
+}
+header .overlay{
+	position: absolute;
+	top:0;
+	left:0;
+	height: 100%;
+	width: 100%;
+	background-color: black;
+	opacity: 0.5;
+	z-index: 1;
+}
+header .container{
+	position: relative;
+	z-index: 2;
+	
+}
+
+.card-deck{
+	display: flex;
+}
+
+
+.card {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  max-width: 100%;
+  height: auto;
+  
+}
+
+#sectionserv{
+	position: relative;
+	overflow: hidden;
+	width: 100%;
+	height: auto;
+}
+
+.column{
+	float: left;
+	max-width: 100%;
+	height: auto;
+	margin: auto;
+}
+
+
+.servimage{
+  clip-path: ellipse(40% 35% at 50% 50%);
+	max-width: 100%;
+	height: auto;
+	border-style: none;
+}
+
+
+.thick{
+	width: 5%;
+	height: auto;
+	margin-right: 10px;
+	margin-top: 9px;
+	float: left;
+}
+
+.row:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+#consection{
+	width: 100%;
+	height: auto;
+	margin-top: 0;
+    margin-bottom: 20px;
+	
+}
+
+
+.form{
+margin-left: 26%;
+margin-right: 26%;
+}
+
+#place{
+	font-size: 50px;
+	font-weight: bold;
+}
+
+#nlsection{
+	width: 100%;
+	height: auto;
+	margin-top: 40px;
+    margin-bottom: 40px;
+	
+}
+
+.icon {
+margin: 20px;
+}
+
+	
+	@media screen and (max-width: 600px) {
+		.column {width: 100%; padding-left: 0;}
+		.card-deck{width: 100%;}
+		.servimage{clip-path: none; max-width: 100%; height: auto; display: flex;}
+		header video {display: none;}
+		header .overlay{background-image: url(mobile/mobile-home-page.jpg);}
+}
+	
+
+

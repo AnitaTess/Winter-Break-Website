@@ -1,0 +1,167 @@
+* {
+	box-sizing: border-box;
+  }
+
+.navbar{
+	opacity: 0.6;
+}
+
+header {
+	position: relative;
+	background-color: black;
+	height: 100vh;
+	min-height: 25rem;
+	width: 100%;
+	overflow: hidden;
+}
+header video {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	min-width: 100%;
+	min-height: 100%;
+	width: auto;
+	height: auto;
+	z-index: 0;
+	transform: translateX(-50%) translateY(-50%);
+}
+header .overlay{
+	position: absolute;
+	top:0;
+	left:0;
+	height: 100%;
+	width: 100%;
+	background-color: black;
+	opacity: 0.5;
+	z-index: 1;
+}
+header .container{
+	position: relative;
+	z-index: 2;
+	
+}
+
+#ski{
+	position: relative;
+	overflow: hidden;
+	width: 100%;
+    height: auto;
+    margin-top: 10px;
+}
+
+#snowboard{
+    position: relative;
+	overflow: hidden;
+	width: 100%;
+    height: auto;
+    margin-top: 10px;  
+}
+
+.column{
+	float: left;
+	max-width: 100%;
+	height: auto;
+	margin: auto;
+}
+
+
+.vid{
+	min-width: 100%;
+	min-height: 100%;
+}
+
+.row:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+.skicalculator{
+	background-color: rgb(15, 15, 15);
+margin-top: 30px;
+margin-bottom: 30px;
+padding-top: 15px;
+padding-bottom: 20px;
+}
+
+.container{
+	width:100%;
+	margin:0 auto;
+	text-align: center;
+}
+
+.calculator{
+	width:100%;
+	display: block;
+ 	 margin-left: auto;
+ 	 margin-right: auto;
+
+}
+
+input[type=text], input[type=number]{
+	font-family: 'Roboto', sans-serif;
+	font-size: 80%;
+	width: 100%;
+	padding: 10px 10px;
+	margin: 8px 0;
+	border: 1px solid #ccc;
+	border-radius: 3px;
+	box-sizing: border-box;
+}
+
+#details, #details2 {
+	font-family: 'Roboto', sans-serif;
+	width: 100%;
+	font-size: 80%;
+	margin-top: 20px;
+	margin-left: auto;
+  	margin-right: auto;
+	color: #ffffff;
+	border: 1px dashed #0f96a8;
+	padding: 1em 10px;
+	box-sizing: border-box;
+	display: none;
+
+}
+
+
+select{
+	font-family: 'Roboto', sans-serif;
+	width:100%;
+	font-size: 80%;
+ 	background-color:#fff;
+ 	border:1px solid #ccc;
+	border-radius:3px;
+	height:2.5em;
+	margin-top: 8px;
+	margin-bottom:30px;
+} 
+
+.icon {
+	margin: 20px;
+	}
+
+@media screen and (max-width: 600px) {
+	.vid{
+        display: flex;
+    }
+    #skitext{
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+    #snowtext{
+        margin-left: 5px;
+        margin-right: 5px;   
+    }
+}
+	
+
+@media (hover: none) and (pointer: coarse) {
+	header video {
+		display: none;
+	}
+	header .overlay{
+	background-image: url(https://source.unsplash.com/XT50InaElMw/1600x900);
+	}
+	
+}

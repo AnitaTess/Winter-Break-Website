@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
+    crossorigin="anonymous">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
+    crossorigin="anonymous">
+    <link rel="stylesheet" href="css/fonts/ionicons.min.css">
+  <link rel="stylesheet" href="css/sss.css">
+  <title>Winter Adventures</title>
+  <link rel="stylesheet" type="text/css" href="https://js.api.here.com/v3/3.1/mapsjs-ui.css" />
+  <script src="https://js.api.here.com/v3/3.1/mapsjs-core.js"></script>
+  <script  src="https://js.api.here.com/v3/3.1/mapsjs-service.js"></script>
+  <script  src="https://js.api.here.com/v3/3.1/mapsjs-ui.js"></script>
+  <script  src="https://js.api.here.com/v3/3.1/mapsjs-mapevents.js"></script>
+
+</head>
+
+<body>
+  <!-- Navigation - Menu Bar -->
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+<div class="container">
+<a class="navbar-brand"	href="#header">Winter Adventures</a>
+<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false">
+	<span class="navbar-toggler-icon"></span></button>
+<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+<div class="navbar-nav ml-auto">
+<a class="nav-item nav-link active"	href="#">Home<span class="sr-only">(current)</span> </a>
+<a class="nav-item nav-link" href="#cards">Accommodation</a>
+<a class="nav-item nav-link" href="#sectionserv">Services</a>
+<a class="nav-item nav-link" href="#consection">Contact</a>
+</div>
+</div>
+</div>	
+</nav>
+
+<!-- home page video banner -->
+<header id="header">
+<div class="overlay"></div>	
+<video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
+<source src="video/Mt_Baker.mp4" type="video/mp4"></video>
+
+<div class="container h-100">
+<div class="d-flex h-100 text-center align-items-center">
+<div class="w-100 text-white">
+	<h1 class="display-3">Holidays in the snow....</h1>
+	<p class="lead mb-0">Skiing & snowboarding accomodation</p>
+	</div>
+	</div>	
+	</div>
+</header>
+
+<!-- sign up for newsletter -->
+<section class="bg-light" id="nlsection">
+<div id="place" class="container text-center"></div>
+  <div class="container-fluid">
+   <div class="flex-container">
+     <div id="newsletter" class="form">
+       <form action="/action_page.php">
+ <h3 class="container text-center">Sign up for newsletter</h3>
+ <div class="form-group">
+   <input class="form-control" placeholder="Enter your full name" id="namenl" required="">
+ </div>
+ <div class="form-group">
+   <input type="email" class="form-control" placeholder="Enter email" id="emailnl" required="">
+ </div>
+ <button type="submit" id="submitnl" class="btn btn-info btn-block">Sign Up</button></form>
+ <img src="img/logowinteradventures.png" alt="logo" style="width: auto; height: 150px; display: block; margin-left: auto; margin-right: auto;">
+ </div>
+ </div>
+ </div>
+ </section>
+	
+<!-- Accommodation Cards -->
+<section class="bg-white" id="cards">
+<div class="container-fluid">
+<div class="card-deck">
+<div class="card" style="width: 400px">
+<img class="card-img-top" src="chalet1/chalet1.jpg" alt="chalet one">
+<div class="card-body">
+<h4 class="card-title">Tignes</h4>	
+<p class="card-text">France</p>
+<p class="card-text">A very well furnished chalet. The Kalinda is great for those who are after a range of facilities but don’t wish to travel far. 
+  Spa's, gyms, restaurants and a ski shop are right on your doorstep.</p>
+<a href="Tignes.html" class="btn btn-primary">More Details</a>
+</div>
+</div>
+	
+
+<div class="card" style="width: 400px">
+<img class="card-img-top" src="chalet2/chalet2.jpg" alt="chalet two">
+<div class="card-body">
+<h4 class="card-title">Morzine</h4>	
+<p class="card-text">France</p>
+<p class="card-text">Situated in St Jean d’Aulps in the "Portes du Soleil" on the Grande Route des Alpes and 30 minutes south of Lake Geneva - a perfect spot for holidays all year round. 
+  A 10 minute walk from the centre of the village.</p>
+<a href="Morzine.html" class="btn btn-primary">More Details</a>
+</div>
+</div>	
+
+
+
+<div class="card" style="width: 400px">
+<img class="card-img-top" src="chalet3/chalet3.jpg" alt="chalet three">
+<div class="card-body">
+<h4 class="card-title">La Tania</h4>	
+<p class="card-text">France</p>
+<p class="card-text">Chalet 715 is our premier luxury chalet catering for 15 guests. We've created a unique, warm, welcoming, home away from home for all the old and new. 
+  30 minutes from Lake Geneva - a perfect spot for holidays all year round.</p>
+<a href="LaTania.html" class="btn btn-primary">More Details</a>
+</div>
+</div>
+
+</div>	
+</div>
+</section>
+
+<!-- Map -->
+<section>
+<div style="width: auto; height: 480px" id="mapContainer"></div>
+<script>
+  // Initialize the platform object:
+  var platform = new H.service.Platform({
+    'apikey': '{pYvf5d0aLUurocR5m72uxkSDDKeqcTMFP1gqKXd5KBs}'
+  });
+
+  // Obtain the default map types from the platform object
+  var maptypes = platform.createDefaultLayers();
+
+  // Instantiate (and display) a map object:
+  var map = new H.Map(
+    document.getElementById('mapContainer'),
+    maptypes.vector.normal.map,
+    {
+      zoom: 7,
+      center: { lng: 3, lat: 45  }
+    });
+
+    window.addEventListener('resize', () => map.getViewPort().resize());
+    var behavior = new H.mapevents.Behavior(new H.mapevents.MapEvents(map));
+   
+
+    //markup for Tignes
+    var svgMarkup = '<svg width="24" height="24" ' +
+    'xmlns="http://www.w3.org/2000/svg">' +
+    '<rect stroke="white" fill="#50098b" x="1" y="1" width="22" ' +
+    'height="22" /><text x="12" y="18" font-size="12pt" ' +
+    'font-family="Arial" font-weight="bold" text-anchor="middle" ' +
+    'fill="white">T</text></svg>';
+    //markup for Morzine
+    var svgMarkup2 = '<svg width="24" height="24" ' +
+    'xmlns="http://www.w3.org/2000/svg">' +
+    '<rect stroke="white" fill="#b54321" x="1" y="1" width="22" ' +
+    'height="22" /><text x="12" y="18" font-size="12pt" ' +
+    'font-family="Arial" font-weight="bold" text-anchor="middle" ' +
+    'fill="white">M</text></svg>';
+    //markup for La Tania
+    var svgMarkup3 = '<svg width="24" height="24" ' +
+    'xmlns="http://www.w3.org/2000/svg">' +
+    '<rect stroke="white" fill="#534123" x="1" y="1" width="22" ' +
+    'height="22" /><text x="12" y="18" font-size="12pt" ' +
+    'font-family="Arial" font-weight="bold" text-anchor="middle" ' +
+    'fill="white">LT</text></svg>';
+
+// Tignes on map
+var icon = new H.map.Icon(svgMarkup),
+    coords = {lat: 45.469729, lng: 6.907594},
+    marker = new H.map.Marker(coords, {icon: icon});
+
+map.addObject(marker);
+
+// Morzine on map
+var icon2 = new H.map.Icon(svgMarkup2),
+    coords2 = {lat: 46.179956, lng: 6.709106},
+    marker2 = new H.map.Marker(coords2, {icon: icon2});
+
+map.addObject(marker2);
+
+// La Tania on map
+var icon3 = new H.map.Icon(svgMarkup3),
+    coords3 = {lat: 43.632825, lng:-0.287332},
+    marker3 = new H.map.Marker(coords3, {icon: icon3});
+
+map.addObject(marker3);
+</script>
+</section>
+
+<!-- Services -->
+<section class="p-3 mb-2 bg-info text-white" id="sectionserv">
+  <div class="container-fluid">
+  <div class="flex-container">
+<div class="blue">
+<div class="row">
+<div class="column">
+<div class="text">
+<br>
+<br>
+<h3 class="services">Services</h3>
+<p>Anyone who has travelled with us will know that it is the experience, quality<br>
+ and dedication of our ski resort teams and our in-resort ski services that<br>
+ really sets us apart from anything else you are likely to experience. <br>
+We aim to continually exceed clients expectations and ensure every time a<br>
+client skis with us, it is their best ski holiday so far.</p><br>
+<p><img class="thick" src="img/thick.png" alt="thick">Our childcare teams deliver an unique service, ensuring that every<br>
+ child gets the attention & support they need. </p>
+<p><img class="thick" src="img/thick.png" alt="thick"> Our comprehensive range of ski programmes ensure that<br>
+ all our clients enjoy their time in the mountains.</p>
+</div>
+</div>
+<div class="column">
+  <div class="servimage">
+<img class="servimage" src="img/ski-services.jpg" alt="services">
+</div>
+</div>
+</div>
+</div>
+</div>
+  </div>
+  
+</section>
+	
+<!-- Contact Form -->
+<section class="bg-light" id="consection">
+ <div class="container-fluid">
+  <div class="flex-container">
+<div class="form">
+<form action="/action_page.php">
+<h3>Contact</h3>
+	<div class="form-group">
+    <input class="form-control" placeholder="Enter name" id="name" required="">
+  </div>
+  <div class="form-group">
+    <input type="email" class="form-control" placeholder="Enter email" id="email" required="">
+  </div>
+  <div class="form-group">
+    <input class="form-control" placeholder="Enter address" id="address" required="">
+  </div>
+  <div class="form-group">
+    <input class="form-control" placeholder="Enter postcode" id="postcode" required="">
+  </div>
+	<div class="form-group">
+    <select class="form-control" id="area" required="">
+   <option value="" disabled selected>Please choose an area</option>
+  <option value="Morzine">Morzine</option>
+  <option value="La Tania">La Tania</option>
+  <option value="Tignes">Tignes</option>
+</select>
+  </div>
+  <div class="form-group">
+    <textarea rows="3" cols="2" class="form-control" placeholder="Message" id="msg" required=""></textarea>
+  </div>
+  <button type="submit" id="submitform" class="btn btn-info btn-block">Submit</button>
+</form>
+</div>
+	 </div>
+	</div>
+</section>
+
+<!-- footer -->
+<footer id="sticky-footer" class="py-4 bg-dark text-white-50">
+  <div class="container text-center">
+    <a href="skisnowboardpage.html">Check out our skiing and snowboarding showcase here!</a>
+  </div>
+  <div id="date" class="container text-center">
+    <script>
+        var d = new Date();
+        document.getElementById("date").innerHTML = d.toUTCString();
+    </script></div>
+    <div class="container text-center">
+      <div class="row">
+          <div class="col item social"><a href="https://www.facebook.com/"><i class="icon ion-social-facebook"></i></a><a href="https://twitter.com/explore"><i class="icon ion-social-twitter"></i></a><a href="https://www.instagram.com/"><i class="icon ion-social-instagram"></i></a></div>
+      </div>
+  </div>
+</footer>
+
+
+
+  <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
+    crossorigin="anonymous"></script>
+
+  <script>
+    // Get the current year for the copyright
+    $('#year').text(new Date().getFullYear());
+  </script>
+  <script src="js/message-box.js"></script>
+  <script src="js/newsletter.js"></script>
+</body>
+
+</html>
